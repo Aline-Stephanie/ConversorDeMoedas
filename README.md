@@ -12,4 +12,4 @@ Este projeto realiza conversões de moedas utilizando a API [exchangerate-api](h
    
 ![image](https://github.com/user-attachments/assets/6211e0e4-904b-4881-9e28-1c5386e5f72d)
 
-Então, é apresentado o resultado da conversão e a opção de continuar a realizar as conversões. 
+Após submeter um valor, é apresentado o resultado da conversão selecionada e a opção de realizar outras conversões. 
