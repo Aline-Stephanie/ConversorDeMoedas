@@ -9,7 +9,7 @@ public class ListagemDeConversoes {
     private final List<String> moedasFiltradas;
 
     public ListagemDeConversoes() {
-        this.moedasFiltradas = List.of("USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "BRL");
+        this.moedasFiltradas = List.of("ARS", "BOB", "CLP", "COP", "EUR", "JPY", "USD", "BRL");
     }
 
     public List<String> listeOpcoesDeConversao(){
@@ -20,13 +20,13 @@ public class ListagemDeConversoes {
 
             if(!opcaoMoeda.equals("BRL")){
                 nomeDaMoeda = switch (opcaoMoeda) {
-                    case "USD" -> "Dólar Americano";
+                    case "ARS" -> "Peso argentino";
+                    case "BOB" -> "Boliviano da Bolívia";
+                    case "CLP" -> "Peso chileno";
+                    case "COP" -> "Peso colombiano";
                     case "EUR" -> "Euro";
                     case "JPY" -> "Iene Japônes";
-                    case "GBP" -> "Libra Esterlina";
-                    case "AUD" -> "Dólar Australiano";
-                    case "CAD" -> "Dólar Canadense";
-                    case "CHF" -> "Franco Suíço";
+                    case "USD" -> "Dólar Americano";
                     default -> nomeDaMoeda;
                 };
                 opcoesDeConversao.add(" BRL --> " + opcaoMoeda + " (Real para " + nomeDaMoeda + ")");
