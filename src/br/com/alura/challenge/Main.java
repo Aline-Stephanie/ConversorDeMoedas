@@ -1,14 +1,14 @@
 package br.com.alura.challenge;
 
-import br.com.alura.challenge.casosdeuso.ListagemDeConversoes;
+import br.com.alura.challenge.casosdeuso.ConversaoDeCambio;
 import br.com.alura.challenge.controllers.ConversorDeMoedasController;
-import br.com.alura.challenge.repository.ConversorDeMoedaApiExterna;
+import br.com.alura.challenge.service.ConversorDeMoedaApiExterna;
 
 public class Main {
     public static void main(String[] args) {
         ConversorDeMoedaApiExterna conversorDeMoedaApi = new ConversorDeMoedaApiExterna();
-        ListagemDeConversoes listarConversoes = new ListagemDeConversoes(conversorDeMoedaApi);
-        ConversorDeMoedasController conversorDeMoedasController = new ConversorDeMoedasController(listarConversoes);
+        ConversaoDeCambio conversaoDeCambio = new ConversaoDeCambio(conversorDeMoedaApi);
+        ConversorDeMoedasController conversorDeMoedasController = new ConversorDeMoedasController(conversaoDeCambio);
 
         conversorDeMoedasController.iniciar();
     }

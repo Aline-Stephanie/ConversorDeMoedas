@@ -1,14 +1,16 @@
 package br.com.alura.challenge.controllers;
+import br.com.alura.challenge.casosdeuso.ConversaoDeCambio;
 import br.com.alura.challenge.casosdeuso.ListagemDeConversoes;
 import java.util.List;
 import java.util.Scanner;
 
 public class ConversorDeMoedasController {
-    private final ListagemDeConversoes listaConversoes;
+    private final ListagemDeConversoes listaConversoes = new ListagemDeConversoes();
+    private final ConversaoDeCambio conversaoDeCambio;
     private final Scanner scanner = new Scanner(System.in);
 
-    public ConversorDeMoedasController(ListagemDeConversoes listaConversoes) {
-        this.listaConversoes = listaConversoes;
+    public ConversorDeMoedasController(ConversaoDeCambio conversaoDeCambio){
+        this.conversaoDeCambio = conversaoDeCambio;
     }
 
     public void iniciar(){
@@ -60,10 +62,10 @@ public class ConversorDeMoedasController {
         String moedaDestino = moedas[1].substring(0, 3);
         String conversao = moedas[1].substring(4).replaceAll("[()]","");
 
-        System.out.println("Valor a converter (Formato 00,00):");
+        System.out.println("Valor a converter (No formato 00,00):");
         double valor = scanner.nextDouble();
         scanner.nextLine();
-        double taxaDeCambio = listaConversoes.obtenhaTaxaDeCambio(moedaOrigem, moedaDestino);
+        double taxaDeCambio = conversaoDeCambio.obtenhaTaxaDeCambio(moedaOrigem, moedaDestino);
         double valorConvertido = valor * taxaDeCambio;
 
         System.out.printf("O valor de %.2f em %s equivale a %.2f \n", valor, conversao, valorConvertido);

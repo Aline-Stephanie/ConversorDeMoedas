@@ -1,4 +1,4 @@
-package br.com.alura.challenge.repository;
+package br.com.alura.challenge.service;
 import com.google.gson.Gson;
 import java.net.URI;
 import java.util.HashMap;
@@ -8,11 +8,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import br.com.alura.challenge.model.TaxaDeCambioApiExterna;
 
-public class ConversorDeMoedaApiExterna implements ConversorDeMoedasRepository{
+public class ConversorDeMoedaApiExterna implements IConversorDeMoedas {
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/fbdfba541e1364f24b938601/latest/BRL";
 
     @Override
-    public Map<String, Double> listagemDeConversoes(){
+    public Map<String, Double> obtemMapeamento(){
         Map<String, Double> taxasDeCambio = new HashMap<>();
         URI url = URI.create(API_URL);
 
